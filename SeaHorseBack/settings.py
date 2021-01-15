@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware"
+    "whitenoise.middleware.clickjacking.XFrameOptionsMiddleware"
 ]
 
 ROOT_URLCONF = 'SeaHorseBack.urls'
