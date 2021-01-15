@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'nx97w#yu30e!x73v&%faofp69y!kd=!-k736wxbj+a%#37flkq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://seahorseback.herokuapp.com/',
