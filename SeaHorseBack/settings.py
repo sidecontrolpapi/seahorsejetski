@@ -27,11 +27,9 @@ SECRET_KEY = 'nx97w#yu30e!x73v&%faofp69y!kd=!-k736wxbj+a%#37flkq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'https://seahorseback.herokuapp.com/',
-    'localhost',
-    'http://127.0.0.1:8000/'
-]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+ 
 
 
 # Application definition
@@ -57,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware"
-    "whitenoise.middleware.clickjacking.XFrameOptionsMiddleware"
+    
 ]
 
 ROOT_URLCONF = 'SeaHorseBack.urls'
@@ -129,8 +127,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 CORS_ORIGIN_WHITELIST = [
